@@ -1,0 +1,141 @@
+{
+  "entities": {
+    "News": {
+      "title": "News Item",
+      "description": "Details about news articles posted by admins",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "titleAr": { "type": "string" },
+        "titleFr": { "type": "string" },
+        "titleEn": { "type": "string" },
+        "contentAr": { "type": "string" },
+        "contentFr": { "type": "string" },
+        "contentEn": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "titleAr", "contentAr", "date"]
+    },
+    "Photo": {
+      "title": "Photo",
+      "description": "Details about photos in the gallery",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "captionAr": { "type": "string" },
+        "captionFr": { "type": "string" },
+        "captionEn": { "type": "string" },
+        "category": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["imageUrl", "captionAr", "category"]
+    },
+    "Joy": {
+      "title": "Joy",
+      "description": "Details about joyous village celebrations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "description": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "mediaType": { "type": "string" },
+        "date": { "type": "string" },
+        "comments": { "type": "array" }
+      },
+      "required": ["id", "title", "author", "description", "date"]
+    },
+    "PassedLovedOne": {
+      "title": "PassedLovedOne",
+      "description": "Memorial for departed villagers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "dates": { "type": "string" },
+        "relation": { "type": "string" },
+        "bio": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "dateAdded": { "type": "string" },
+        "comments": { "type": "array" }
+      },
+      "required": ["id", "name", "dates", "dateAdded"]
+    },
+    "CouncilMessage": {
+      "title": "CouncilMessage",
+      "description": "Messages posted in the village council board",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "author": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "author", "content", "category", "date"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Emergency ticker bar updates",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "textAr": { "type": "string" },
+        "textFr": { "type": "string" },
+        "textEn": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "textAr", "date"]
+    },
+    "Song": {
+      "title": "Song",
+      "description": "Audio track added to the Voice of Tebournok Radio",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "titleAr": { "type": "string" },
+        "titleEn": { "type": "string" },
+        "artistAr": { "type": "string" },
+        "artistEn": { "type": "string" },
+        "url": { "type": "string" },
+        "duration": { "type": "string" },
+        "isPreset": { "type": "boolean" },
+        "dateAdded": { "type": "string" }
+      },
+      "required": ["id", "titleAr", "url", "duration"]
+    }
+  },
+  "firestore": {
+    "/news": {
+      "schema": "News",
+      "description": "Collection of news stories"
+    },
+    "/photos": {
+      "schema": "Photo",
+      "description": "Collection of gallery photos"
+    },
+    "/joys": {
+      "schema": "Joy",
+      "description": "Collection of village celebrations"
+    },
+    "/passed_loved_ones": {
+      "schema": "PassedLovedOne",
+      "description": "Collection of memorial records"
+    },
+    "/council_messages": {
+      "schema": "CouncilMessage",
+      "description": "Collection of citizen messages"
+    },
+    "/announcements": {
+      "schema": "Announcement",
+      "description": "Collection of news ticker notices"
+    },
+    "/songs": {
+      "schema": "Song",
+      "description": "Collection of community radio songs"
+    }
+  }
+}
